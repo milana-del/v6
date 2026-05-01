@@ -302,6 +302,8 @@ $all_languages = $pdo->query("SELECT name FROM language ORDER BY name")->fetchAl
         .cancel-link { margin-top: 15px; text-align: center; }
         .cancel-link a { color: #ff80b0; }
         .btn-save { background: #d94a8a; }
+        .back-link { margin-top: 30px; text-align: center; }
+        .back-link a { background: #8a2a8a; color: white; padding: 8px 24px; border-radius: 30px; text-decoration: none; display: inline-block; }
     </style>
 </head>
 <body>
