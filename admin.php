@@ -7,7 +7,7 @@ if (empty($_SESSION['csrf_token'])) {
     $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
 }
 
-// === ПОДКЛЮЧЕНИЕ К БД ===
+// ПОДКЛЮЧЕНИЕ К БД 
 function getDB() {
     static $pdo = null;
     if ($pdo === null) {
@@ -28,7 +28,7 @@ function getDB() {
 
 $pdo = getDB();
 
-// === HTTP-АВТОРИЗАЦИЯ ===
+//  HTTP-АВТОРИЗАЦИЯ 
 if (!isset($_SERVER['PHP_AUTH_USER']) || !isset($_SERVER['PHP_AUTH_PW'])) {
     header('WWW-Authenticate: Basic realm="Админ-панель Задание 6"');
     header('HTTP/1.0 401 Unauthorized');
@@ -58,7 +58,7 @@ if (!$admin_row || !password_verify($auth_pass, $admin_row['password_hash'])) {
     exit;
 }
 
-// === ОБРАБОТКА ДЕЙСТВИЙ ===
+//  ОБРАБОТКА ДЕЙСТВИЙ 
 $messages = [];
 $edit_errors = [];
 
@@ -225,7 +225,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['edit_id'])) {
     }
 }
 
-// === ЗАГРУЗКА ДАННЫХ ДЛЯ ТАБЛИЦЫ ===
+//  ЗАГРУЗКА ДАННЫХ ДЛЯ ТАБЛИЦЫ 
 $applications = [];
 $stmt = $pdo->query("
     SELECT a.*, GROUP_CONCAT(l.name SEPARATOR ', ') AS languages_list
@@ -237,7 +237,7 @@ $stmt = $pdo->query("
 ");
 $applications = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-// === СТАТИСТИКА ПО ЯЗЫКАМ ===
+//  СТАТИСТИКА ПО ЯЗЫКАМ 
 $stats = [];
 $stmt = $pdo->query("
     SELECT l.name, COUNT(DISTINCT al.application_id) AS cnt

@@ -23,6 +23,7 @@
         </div>
         <div class="nav-links">
             <a href="index.php">Главная</a>
+            <a href="admin.php">ADMIN СТРАНИЦА</a>
             <a href="v.php">Просмотр анкет</a>
             <?php if ($is_logged_in): ?>
                 <a href="index.php?logout=1" style="color:#ff80b0;">Выйти</a>

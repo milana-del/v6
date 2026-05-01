@@ -112,7 +112,7 @@ try {
         </div>
         <div class="nav-links">
             <a href="index.php">Форма</a>
-            
+            <a href="admin.php">ADMIN СТРАНИЦА</a>
         </div>
     </div>
 
