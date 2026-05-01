@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Анкета | Лабораторная работа №5</title>
+    <title>Анкета | Лабораторная работа №6</title>
     <link rel="icon" type="image/x-icon" href="maini.ico">
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1"></script>
